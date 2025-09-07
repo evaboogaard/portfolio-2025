@@ -20,7 +20,6 @@ if (!supportsScrollDriven) {
         start: "top 220%",
         end: "top 150%",
         scrub: true,
-        markers: true,
       },
     },
   );
@@ -30,13 +29,14 @@ if (!supportsScrollDriven) {
     { skewY: 0, x: 0, y: 0 },
     {
       skewY: -14,
-      x: "4rem",
+      // x: "-2rem",
       y: "20vh",
       scrollTrigger: {
         trigger: ".hero-section",
         start: "bottom 50%",
-        end: "bottom 10%",
+        end: "bottom 25%",
         scrub: true,
+        markers: true,
       },
     },
   );
