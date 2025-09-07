@@ -17,9 +17,10 @@ if (!supportsScrollDriven) {
       scale: 1,
       scrollTrigger: {
         trigger: "#about",
-        start: "top 150%",
-        end: "top 70%",
+        start: "top 220%",
+        end: "top 150%",
         scrub: true,
+        markers: true,
       },
     },
   );
@@ -36,7 +37,6 @@ if (!supportsScrollDriven) {
         start: "bottom 50%",
         end: "bottom 10%",
         scrub: true,
-        markers: true,
       },
     },
   );
