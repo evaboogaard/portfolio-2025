@@ -1,0 +1,14 @@
+.role {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-orange);
+  color: var(--color-jet);
+  padding: var(--space-m);
+  border-top: 7px dashed var(--color-onyx);
+  border-bottom: 7px dashed var(--color-onyx);
+  font-weight: bold;
+
+  span:first-of-type {
+    color: var(--color-onyx);
+  }
+}

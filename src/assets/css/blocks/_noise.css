@@ -1,0 +1,11 @@
+.noise {
+  position: absolute;
+  top: 0;
+
+  background-image: url("https://img.freepik.com/free-vector/abstract-background-black-white-texture-grainy_474888-5175.jpg?semt=ais_hybrid&w=740&q=80");
+  background-size: cover;
+  mix-blend-mode: soft-light;
+  background-repeat: no-repeat;
+
+  pointer-events: none;
+}

@@ -1,0 +1,7 @@
+footer {
+  background-color: var(--color-jet);
+  color: var(--color-beige);
+  position: relative;
+  overflow-y: hidden;
+  padding-block: var(--space-xl);
+}

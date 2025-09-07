@@ -1,0 +1,18 @@
+.tag {
+  padding: var(--space-xs) var(--space-l);
+  background-color: color-mix(
+    in srgb,
+    var(--color-darkorange),
+    transparent 70%
+  );
+  color: var(--color-jet);
+  font-size: var(--text-step-0);
+  box-shadow:
+    1px 1px 0 var(--color-darkorange),
+    -1px -1px 0 var(--color-beige);
+  width: 100%;
+
+  @media (--md) {
+    width: auto;
+  }
+}

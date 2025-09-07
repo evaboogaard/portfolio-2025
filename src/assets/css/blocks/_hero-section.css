@@ -1,0 +1,110 @@
+.hero-section {
+  grid-column: popout;
+  height: calc(50vh + 4rem);
+  position: relative;
+
+  &::before {
+    content: "";
+    height: calc(100% + 15rem);
+    top: 0;
+    position: absolute;
+    width: 100%;
+    background-image: radial-gradient(
+      var(--color-orange) 0% 50%,
+      var(--color-darkorange)
+    );
+    background-size: 200% 300%;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+  }
+
+  &::after {
+    content: "";
+    width: clamp(12rem, 35vw, 20rem);
+    aspect-ratio: 1;
+    position: absolute;
+    bottom: clamp(-12rem, -20vw, -8rem);
+    border-radius: 50%;
+    background-color: color-mix(
+      in srgb,
+      var(--color-orange),
+      var(--color-darkorange)
+    );
+    left: 50%;
+    translate: -50% 0;
+    box-shadow:
+      3px 3px 0 var(--color-darkorange),
+      -3px -3px 0 var(--color-beige);
+
+    @supports (animation-timeline: view(y)) {
+      animation: scale-down-ani;
+      animation-timeline: view(y);
+      animation-range: contain 40% exit;
+    }
+  }
+
+  .noise {
+    width: 20dvw;
+    height: calc(100% + 15rem);
+
+    &:first-of-type {
+      left: 0;
+      mask-image: linear-gradient(90deg, red, transparent);
+    }
+
+    &:last-of-type {
+      right: 0;
+      mask-image: linear-gradient(90deg, transparent, red);
+    }
+  }
+}
+
+.hero-section__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-s);
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: var(--color-onyx);
+  z-index: 10;
+  text-align: center;
+
+  @media (--md) {
+    padding-inline-start: var(--space-xl);
+    text-align: start;
+    align-items: start;
+
+    @supports (animation-timeline: view(y)) {
+      animation: h1-ani forwards;
+      animation-timeline: view(y);
+      animation-range: exit;
+    }
+  }
+
+  h1 {
+    letter-spacing: 0.2rem;
+    text-shadow: -0.1rem -0.1rem 0 var(--color-beige);
+  }
+}
+
+@keyframes scale-down-ani {
+  0% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 1.5;
+  }
+}
+
+@keyframes h1-ani {
+  0% {
+    transform: skewY(0deg) translate(0, 0);
+  }
+
+  100% {
+    transform: skewY(-14deg) translate(4rem, 20vh);
+  }
+}

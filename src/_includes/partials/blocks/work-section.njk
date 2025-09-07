@@ -1,0 +1,54 @@
+{% set projects = [
+  {
+    title: "Graduation Project ",
+    description: "A browser tool allowing users to create fluid typography with the clamp() function in CSS. It allows designers with little code knowledge to play around with responsive typography. Creds to the awesome Nils Binder for helping me think up the concept.",
+    img: "../assets/images/projects/graduation-project.png",
+    href: "/graduation-project",
+    vtName: "graduation-project"
+  },
+  {
+    title: "Oce-Aan-en-Uit",
+    description: "An ocean made with pure HTML & CSS, testing the constraints of the medium. The user can change the weather using the control panel - please do see what happens next.",
+    img: "../assets/images/projects/oce-aan-en-uit.jpeg",
+    href: "/oce-aan-en-uit",
+    vtName: "oce-aan-en-uit"
+  },
+  {
+    title: "2001",
+    description: "An ode to one of the best movies of all time, made with three.js and GSAP.",
+    img: "../assets/images/projects/2001.jpeg",    
+    href: "/2001",
+    vtName: "prj-2001"
+  },
+  {
+    title: "Space Duck",
+    description: "An animation project of an astronaut duck, made with HTML, CSS and a lil bit of JS.",
+    img: "../assets/images/projects/space-duck.jpeg",
+    href: "/space-duck",
+    vtName: "space-duck"
+  }
+] %}
+
+<section id="work" class="work-section page-layout py-l">
+    <div>
+        <h2 class="text-step-6">Work</h2>
+    </div>
+
+
+    {% for project in projects %}
+        <section class="project">
+            <div class="project__text stack-m">
+                <h3 class="project__text-title">{{ project.title }}</h3>
+                <p class="text-step-0">{{ project.description }}</p>
+                <a class="button button--primary project__text-link" href="{{ project.href }}">More details</a>
+            </div>
+            <div class="project__visual">
+                <div class="project__visual-image-container">
+                    <div class="project__visual-image-scroller">
+                        <img src="{{ project.img }}" alt="" style="--vt: {{ project.vtName }}">
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endfor %}
+</section>

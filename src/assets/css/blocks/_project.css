@@ -1,0 +1,147 @@
+.project {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: var(--space-m);
+  padding-block: var(--space-m);
+
+  &:nth-of-type(2n) {
+    .project__visual-image-container {
+      transform: rotateY(-15deg);
+
+      @supports (animation-timeline: view(y)) {
+        animation-direction: reverse;
+      }
+    }
+
+    .project__text::before {
+      background-position: 100% 50%;
+      display: none;
+    }
+  }
+
+  @media (--md) {
+    flex-direction: row-reverse;
+
+    &:nth-of-type(2n) {
+      flex-direction: row;
+
+      .project__visual-image-container {
+        box-shadow: 7px 7px 2px
+          color-mix(in srgb, var(--color-beige), transparent 75%);
+      }
+    }
+  }
+}
+
+.project__visual {
+  padding: var(--space-m);
+  perspective: 800px;
+  z-index: 100;
+
+  @media (--md) {
+    width: 50%;
+  }
+}
+
+.project__visual-image-container {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform: rotateY(-15deg);
+  position: relative;
+  padding-block-start: 1.4rem;
+
+  @supports (animation-timeline: view(y)) {
+    animation: work-perspective-ani linear both;
+    animation-timeline: view(y);
+  }
+
+  &::before {
+    --size: 0.25rem;
+    content: "";
+    position: absolute;
+    top: 0;
+    background-color: var(--color-black);
+    background-image: radial-gradient(
+        circle at 1rem center,
+        var(--color-red) 0 var(--size),
+        transparent var(--size) 100%
+      ),
+      radial-gradient(
+        circle at 2rem center,
+        var(--color-orange) 0 var(--size),
+        transparent var(--size) 100%
+      ),
+      radial-gradient(
+        circle at 3rem center,
+        var(--color-green) 0 var(--size),
+        transparent var(--size) 100%
+      );
+    width: 100%;
+    height: 1.5rem;
+  }
+}
+
+.project__visual-image-scroller {
+  picture {
+    height: 100%;
+  }
+
+  img {
+    object-fit: cover;
+    height: 100%;
+  }
+}
+
+.project__text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  background-position: var(--project-bg-pos, 0% 50%);
+
+  &::before {
+    content: "";
+    width: 100vw;
+    position: absolute;
+    left: calc(var(--space-m) * -1);
+    height: 200%;
+    z-index: 1;
+    background-image: radial-gradient(
+      color-mix(in srgb, var(--color-orange), transparent 70%) 0% 20%,
+      color-mix(in srgb, var(--color-orange), transparent 80%) 20% 40%,
+      color-mix(in srgb, var(--color-orange), transparent 90%) 40% 70%,
+      transparent 70%
+    );
+    background-size: 200% 80%;
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+  }
+
+  @media (--md) {
+    width: 50%;
+
+    &::before {
+      width: 50vw;
+    }
+  }
+
+  * {
+    z-index: 1;
+  }
+}
+
+.project__text-title {
+  font-size: var(--text-step-1);
+}
+
+@keyframes work-perspective-ani {
+  from {
+    transform: rotateY(-30deg);
+  }
+
+  to {
+    transform: rotateY(30deg);
+  }
+}

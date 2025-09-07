@@ -1,0 +1,7 @@
+.link {
+  &:focus-visible {
+    background-color: var(--color-orange);
+    outline: 2px dashed var(--color-darkorange);
+    color: var(--color-jet);
+  }
+}

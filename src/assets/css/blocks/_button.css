@@ -1,0 +1,103 @@
+.button {
+  border: none;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  display: flex;
+  width: fit-content;
+  font-size: var(--text-step-0);
+
+  &:focus-visible {
+    outline: 2px dashed var(--color-beige);
+    outline-offset: 2px;
+  }
+}
+
+.button--primary {
+  background-image: linear-gradient(
+    -90deg,
+    var(--color-black) 0 2.75rem,
+    var(--color-jet) 2.75rem
+  );
+  color: var(--color-beige);
+  padding-inline-start: 1rem;
+  backdrop-filter: blur(10px);
+  max-width: max-content;
+  gap: 1.5rem;
+  align-items: center;
+  height: 3rem;
+  transition: 0.3s ease-out;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    aspect-ratio: 1/1.2;
+    height: 100%;
+    transition: 0.3s ease-out;
+    background-image: url('data:image/svg+xml,<svg width="203" height="258" viewBox="0 0 203 258" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="18.4058" y="57" width="101.361" height="25" transform="rotate(45 18.4058 57)" fill="%23FFF3CB"/><rect x="73.9351" y="0.317627" width="181.522" height="25" transform="rotate(45 73.9351 0.317627)" fill="%23FFF3CB"/><rect x="1" y="182.673" width="101.361" height="25" transform="rotate(-45 1 182.673)" fill="%23FFF3CB"/><rect x="55.9395" y="239.945" width="182.356" height="25" transform="rotate(-45 55.9395 239.945)" fill="%23FFF3CB"/></svg>');
+    background-size: 40% 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &:hover {
+    translate: 0.25rem -0.25rem 0;
+    box-shadow: -0.25rem 0.25rem 0 var(--color-black);
+
+    &::after {
+      background-size: 35% 35%;
+      rotate: -45deg;
+      background-image: url('data:image/svg+xml,<svg width="203" height="258" viewBox="0 0 203 258" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="18.4058" y="57" width="101.361" height="25" transform="rotate(45 18.4058 57)" fill="white"/><rect x="73.9351" y="0.317627" width="181.522" height="25" transform="rotate(45 73.9351 0.317627)" fill="white"/><rect x="1" y="182.673" width="101.361" height="25" transform="rotate(-45 1 182.673)" fill="white"/><rect x="55.9395" y="239.945" width="182.356" height="25" transform="rotate(-45 55.9395 239.945)" fill="white"/></svg>');
+    }
+  }
+}
+
+.button--secondary {
+  background-image: linear-gradient(
+    -90deg,
+    var(--color-darkorange) 0 2.75rem,
+    var(--color-orange) 2.75rem
+  );
+  color: var(--color-black);
+  padding-inline-start: 1rem;
+  backdrop-filter: blur(10px);
+  max-width: max-content;
+  gap: 1.5rem;
+  align-items: center;
+  height: 3rem;
+  transition: 0.3s ease-out;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    aspect-ratio: 1/1.2;
+    height: 100%;
+    transition: 0.3s ease-out;
+    background-image: url('data:image/svg+xml,<svg width="203" height="258" viewBox="0 0 203 258" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="18.4058" y="57" width="101.361" height="25" transform="rotate(45 18.4058 57)" fill="black"/><rect x="73.9351" y="0.317627" width="181.522" height="25" transform="rotate(45 73.9351 0.317627)" fill="black"/><rect x="1" y="182.673" width="101.361" height="25" transform="rotate(-45 1 182.673)" fill="black"/><rect x="55.9395" y="239.945" width="182.356" height="25" transform="rotate(-45 55.9395 239.945)" fill="black"/></svg>');
+    background-size: 40% 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &:hover {
+    translate: 0.25rem -0.25rem 0;
+    box-shadow: -0.25rem 0.25rem 0 var(--color-darkorange);
+
+    &::after {
+      background-size: 35% 35%;
+      rotate: -45deg;
+      background-image: url('data:image/svg+xml,<svg width="203" height="258" viewBox="0 0 203 258" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="18.4058" y="57" width="101.361" height="25" transform="rotate(45 18.4058 57)" fill="black"/><rect x="73.9351" y="0.317627" width="181.522" height="25" transform="rotate(45 73.9351 0.317627)" fill="black"/><rect x="1" y="182.673" width="101.361" height="25" transform="rotate(-45 1 182.673)" fill="black"/><rect x="55.9395" y="239.945" width="182.356" height="25" transform="rotate(-45 55.9395 239.945)" fill="black"/></svg>');
+    }
+  }
+}
+
+.button--mail {
+  background-color: var(--color-onyx);
+  padding: var(--space-s) var(--space-m);
+  border: 2px solid var(--color-beige);
+
+  &:hover {
+    background-color: var(--color-beige);
+    border-color: var(--color-onyx);
+  }
+}
