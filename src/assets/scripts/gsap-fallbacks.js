@@ -36,7 +36,6 @@ if (!supportsScrollDriven) {
         start: "bottom 50%",
         end: "bottom 25%",
         scrub: true,
-        markers: true,
       },
     },
   );
