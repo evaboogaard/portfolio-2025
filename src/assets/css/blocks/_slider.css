@@ -1,4 +1,7 @@
 .slider {
+  --scrollbar-foreground: var(--color-darkorange);
+  --scrollbar-background: var(--color-orange);
+
   grid-column: full;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
@@ -8,11 +11,11 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: var(--color-darkorange);
+    background: var(--scrollbar-foreground);
   }
 
   &::-webkit-scrollbar-track {
-    background: var(--color-orange);
+    background: var(--scrollbar-background);
   }
 
   &:focus-visible {

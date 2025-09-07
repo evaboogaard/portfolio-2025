@@ -16,9 +16,9 @@ if (!supportsScrollDriven) {
       skewX: 0,
       scale: 1,
       scrollTrigger: {
-        trigger: "#about",
-        start: "top 220%",
-        end: "top 150%",
+        trigger: ".about-trigger",
+        start: "top 100%",
+        end: "top 40%",
         scrub: true,
       },
     },
@@ -29,7 +29,6 @@ if (!supportsScrollDriven) {
     { skewY: 0, x: 0, y: 0 },
     {
       skewY: -14,
-      // x: "-2rem",
       y: "20vh",
       scrollTrigger: {
         trigger: ".hero-section",
