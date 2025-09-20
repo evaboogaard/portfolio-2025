@@ -71,24 +71,26 @@
     font-size: var(--text-step-5);
   }
 
-  li {
-    padding-inline-start: 1ch;
-    width: fit-content;
-
-    &::marker {
-      content: "☞";
-    }
-
-    &.product {
-      border-bottom: 2px solid var(--color-orange);
+  .list {
+    li {
+      padding-inline-start: 1ch;
+      width: fit-content;
 
       &::marker {
-        color: var(--color-darkorange);
+        content: "☞";
       }
-    }
 
-    &.user {
-      border-bottom: 2px solid var(--color-jet);
+      &.product {
+        border-bottom: 2px solid var(--color-orange);
+
+        &::marker {
+          color: var(--color-darkorange);
+        }
+      }
+
+      &.user {
+        border-bottom: 2px solid var(--color-jet);
+      }
     }
   }
 }

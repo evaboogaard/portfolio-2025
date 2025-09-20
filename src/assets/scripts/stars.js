@@ -3,7 +3,7 @@
 // ).matches;
 
 // if (motionOK) {
-//   const stars = document.querySelector(".hero-section .stars");
+//   const stars = document.querySelector("footer .stars");
 
 //   let targetX = 0;
 //   let targetY = 0;

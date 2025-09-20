@@ -5,6 +5,9 @@
   grid-column: full;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
+  background-color: color-mix(in srgb, var(--color-orange), transparent 60%);
+  /* padding-block-start: var(--space-l); */
+  border-top: 5px solid var(--color-orange);
 
   &::-webkit-scrollbar {
     height: 0.5rem;
@@ -33,6 +36,9 @@
 
 .slider__item {
   scroll-snap-align: center;
+  /* min-width: 90%; */
+  /* min-width: min(100%, 40rem); */
+  min-width: 15rem;
   min-width: clamp(15rem, 100%, 40rem);
   display: flex;
   flex-direction: column-reverse;
@@ -46,6 +52,11 @@
     color: var(--color-onyx);
   }
 
+  img {
+    max-height: 80vh;
+    object-fit: cover;
+  }
+
   @supports (animation-timeline: scroll()) {
     view-timeline-name: --item-in-and-out-of-view;
     view-timeline-axis: inline;
@@ -57,12 +68,8 @@
       animation-range: entry, exit;
       animation-timeline: --item-in-and-out-of-view;
 
-      width: auto;
-
-      img {
-        max-height: 40rem;
-        width: auto;
-      }
+      max-height: fit-content;
+      height: auto;
     }
   }
 }
