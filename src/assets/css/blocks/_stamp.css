@@ -1,0 +1,14 @@
+.stamp {
+  display: none;
+
+  @media (--md) {
+    display: block;
+    translate: 0 80%;
+    position: absolute;
+    width: 30%;
+
+    svg {
+      width: 70%;
+    }
+  }
+}
